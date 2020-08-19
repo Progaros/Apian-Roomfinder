@@ -1,0 +1,35 @@
+input.search {
+    width: 3em;
+    max-width: 25em;
+    transition: width 0.4s ease-in-out, color 0.1s ease-in-out;
+    position: fixed;
+    right: 1em;
+    background-color: #343a40;
+    border: none;
+    color: transparent;
+}
+
+input.search::placeholder {
+	color: transparent;
+}
+
+input.search:focus::placeholder {
+	color: #777;
+}
+
+input.search:focus {
+  width: calc(100% - 2em);
+  border-bottom: 1px solid white;
+  background: none;
+  outline: none;
+  color: #ccc;
+}
+
+div.search-button {
+  position: fixed;
+  right: 2em;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
