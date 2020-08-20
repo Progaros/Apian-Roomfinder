@@ -5,17 +5,26 @@ document.getElementById("search-input").addEventListener('keyup', ({key}) => {
         search();
 });
 
+if (!isNaN(getSearchedRoom()))
+    getMap(getSearchedRoom());
+
 function search(){
     if (parseInt(window.getComputedStyle(document.getElementById("search-input")).width) < 50)
         document.getElementById("search-input").focus();
-    else if (!isNaN(document.getElementById("search-input").value))
-        location.href = location.origin + location.pathname + "?room=" + document.getElementById("search-input").value;
-    else {
-        alert("please enter a valid number");
-        if (document.getElementById("search-input").removeEventListener)
-        document.getElementById("search-input").removeEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-            search();
-            }
-        });  
-}}
+    else if (!isNaN(document.getElementById("search-input").value)          // not text
+             && document.getElementById("search-input").value.length > 0    // not empty
+             && document.getElementById("search-input").value > 0           //between 0
+             && document.getElementById("search-input").value < 501){       //and 500
+        window.history.pushState("", "", location.href = location.origin + location.pathname + "?room=" + document.getElementById("search-input").value);
+    }
+    else
+        alert("Bitte eine Nummer zwischen 1 und 500 eingeben");
+}
+
+function getMap(room){
+    document.getElementById("map").innerText = room;
+}
+
+function getSearchedRoom(){
+    return new URL(location.href).searchParams.get("room");
+}
