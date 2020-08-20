@@ -1,0 +1,26 @@
+#map {
+    width: 100%;
+    max-width: 500px;
+}
+
+#mapContainer {
+    height: 141.8vw;
+}
+
+#dot {
+    width: 8vw;
+    margin-top: -8vw;
+    position: relative;
+    display: none;
+}
+
+@media (min-width: 500px) {
+    #mapContainer {
+        margin: 0 calc((100% - 500px) / 2);
+        height: 699.223px;
+    }
+    #dot {
+        width: 35px;
+        margin-top: -35px;
+    }
+}

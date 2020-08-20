@@ -1,15 +1,24 @@
+//eventlisteners
 document.getElementById("search-button").addEventListener("click", search);
-
+document.getElementById("otherRooms").addEventListener("click", function() {
+    $('.navbar-collapse').collapse('hide');
+});
 document.getElementById("search-input").addEventListener('keyup', ({key}) => {
     if (key === "Enter")
         search();
 });
+if ("onhashchange" in window)
+window.onhashchange = function () {
+    updateMap(getSearchedRoom());
+}
 
+//load better picture
 if (document.getElementById("map").complete) {
   loadBetterImage()
 } else {
     document.getElementById("map").addEventListener('load', loadBetterImage);
 }
+
 function loadBetterImage(){
     var newImg = new Image;
     newImg.onload = function() {
@@ -19,26 +28,30 @@ function loadBetterImage(){
     document.getElementById("map").removeEventListener('load', loadBetterImage);
 }
 
-if (!isNaN(getSearchedRoom()) && getSearchedRoom() != null)
+
+//set pointer on load
+if (rooms[getSearchedRoom()] != undefined)
     updateMap(getSearchedRoom());
 
 function search(){
-    if (parseInt(window.getComputedStyle(document.getElementById("search-input")).width) < 50)
-        document.getElementById("search-input").focus();
-    else if (!isNaN(document.getElementById("search-input").value)          // not text
-             && document.getElementById("search-input").value.length > 0    // not empty
-             && document.getElementById("search-input").value > 0           //between 0
-             && document.getElementById("search-input").value < 501){       //and 500
-        window.history.pushState("", "", location.href = location.origin + location.pathname + "?room=" + document.getElementById("search-input").value);
+    searchInput = document.getElementById("search-input");
+    if (parseInt(window.getComputedStyle(searchInput).width) < 50)
+        searchInput.focus();
+    else if (!isNaN(searchInput.value)          // not text
+             && searchInput.value.length > 0    // not empty
+             && searchInput.value > 0           //between 0
+             && searchInput.value < 501){       //and 500
+        window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
+        searchInput.blur();
     }
     else
-        alert("Bitte eine Nummer zwischen 1 und 500 eingeben");
+        alert("Bitte eine valide Zimmernummer angeben");
 }
 
 function updateMap(room){
     var dot = document.getElementById("dot");
     dot.style.display = "inherit";
-    dot.style.top  = rooms[room][0] + "vw";
+    dot.style.top  = rooms[room][0] + "%";
     dot.style.left = rooms[room][1] + "%";
 }
 
@@ -46,5 +59,5 @@ function updateMap(room){
 
 
 function getSearchedRoom(){
-    return new URL(location.href).searchParams.get("room");
+    return window.location.hash.substr(1);
 }
