@@ -10,6 +10,7 @@
 #dot {
     width: 8vw;
     margin-top: -8vw;
+    margin-left: -4vw;
     position: relative;
     display: none;
 }
@@ -17,10 +18,11 @@
 @media (min-width: 500px) {
     #mapContainer {
         margin: 0 calc((100% - 500px) / 2);
-        height: 699.223px;
+        height: 708.188px;
     }
     #dot {
         width: 35px;
         margin-top: -35px;
+        margin-left: -17.5px;
     }
 }

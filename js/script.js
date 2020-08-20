@@ -50,9 +50,12 @@ function search(){
 
 function updateMap(room){
     var dot = document.getElementById("dot");
-    dot.style.display = "inherit";
-    dot.style.top  = rooms[room][0] + "%";
-    dot.style.left = rooms[room][1] + "%";
+    dot.style.display = "none";
+    if (rooms[room] != undefined){
+        dot.style.top  = rooms[room][0] + "%";
+        dot.style.left = rooms[room][1] + "%";
+        dot.style.display = "inherit";
+    }
 }
 
 
