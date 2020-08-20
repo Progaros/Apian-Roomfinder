@@ -5,6 +5,20 @@ document.getElementById("search-input").addEventListener('keyup', ({key}) => {
         search();
 });
 
+var img = document.getElementById("map");
+if (img.complete) {
+  loadBetterImage()
+} else {
+  img.addEventListener('load', loadBetterImage)
+}
+function loadBetterImage(){
+    var newImg = new Image;
+    newImg.onload = function() {
+        img.src = this.src;
+    }
+    newImg.src = 'res/apian.jpg';
+}
+
 if (!isNaN(getSearchedRoom()))
     getMap(getSearchedRoom());
 
@@ -22,8 +36,11 @@ function search(){
 }
 
 function getMap(room){
-    document.getElementById("map").innerText = room;
+    //stuff
 }
+
+
+
 
 function getSearchedRoom(){
     return new URL(location.href).searchParams.get("room");

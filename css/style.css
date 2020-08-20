@@ -5,6 +5,11 @@ html {
 body {
     margin-bottom: 60px; /* Margin bottom by footer height */
 }
+
+#map {
+    width: 100%;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
