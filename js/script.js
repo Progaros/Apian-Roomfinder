@@ -19,8 +19,8 @@ function loadBetterImage(){
     document.getElementById("map").removeEventListener('load', loadBetterImage);
 }
 
-if (!isNaN(getSearchedRoom()))
-    getMap(getSearchedRoom());
+if (!isNaN(getSearchedRoom()) && getSearchedRoom() != null)
+    updateMap(getSearchedRoom());
 
 function search(){
     if (parseInt(window.getComputedStyle(document.getElementById("search-input")).width) < 50)
@@ -35,8 +35,11 @@ function search(){
         alert("Bitte eine Nummer zwischen 1 und 500 eingeben");
 }
 
-function getMap(room){
-    //stuff
+function updateMap(room){
+    var dot = document.getElementById("dot");
+    dot.style.display = "inherit";
+    dot.style.top  = rooms[room][0] + "vw";
+    dot.style.left = rooms[room][1] + "%";
 }
 
 

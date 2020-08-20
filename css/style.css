@@ -10,6 +10,16 @@ body {
     width: 100%;
 }
 
+#dot {
+    border: 2vw solid red;
+    border-radius: 100%;
+    width: 0;
+    height: 0;
+    margin: -2vw;
+    position: relative;
+    display: none;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
