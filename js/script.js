@@ -5,18 +5,18 @@ document.getElementById("search-input").addEventListener('keyup', ({key}) => {
         search();
 });
 
-var img = document.getElementById("map");
-if (img.complete) {
+if (document.getElementById("map").complete) {
   loadBetterImage()
 } else {
-  img.addEventListener('load', loadBetterImage)
+    document.getElementById("map").addEventListener('load', loadBetterImage);
 }
 function loadBetterImage(){
     var newImg = new Image;
     newImg.onload = function() {
-        img.src = this.src;
+        document.getElementById("map").src = this.src;
     }
     newImg.src = 'res/apian.jpg';
+    document.getElementById("map").removeEventListener('load', loadBetterImage);
 }
 
 if (!isNaN(getSearchedRoom()))
