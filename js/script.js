@@ -50,11 +50,19 @@ function search(){
 
 function updateMap(room){
     var dot = document.getElementById("dot");
+    var square = document.getElementById("square");
     dot.style.display = "none";
     if (rooms[room] != undefined){
         dot.style.top  = rooms[room][0] + "%";
         dot.style.left = rooms[room][1] + "%";
         dot.style.display = "inherit";
+        
+        square.style.display = "none";
+        if (rooms[room][2] != undefined){
+            square.style.top  = floors[rooms[room][2]][0] + "%";
+            square.style.left = floors[rooms[room][2]][1] + "%";
+            square.style.display = "inherit";
+        }
     }
 }
 

@@ -35,7 +35,12 @@ var rooms = [[], [84,42,0],
 [84,41,0],
 [75,41,0]
 ];
-rooms["buero"] = [40,33,0];
+rooms["buero"] = [40,35,0];
+rooms["grillplatz"] = [18,83];
 rooms["parkplatz"] = [95,63];
-rooms["waschraum"] = [43,30];
-rooms["fahrradschuppen"] = [6,34.5];
+rooms["waschraum"] = [43,30,0];
+rooms["fahrradschuppen"] = [6,38];
+
+var floors = [
+    [30.5,7.8]
+]

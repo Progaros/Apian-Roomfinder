@@ -14,7 +14,7 @@ input.search {
     width: 3em;
     max-width: 25em;
     transition: width 0.4s ease-in-out, color 0.1s ease-in-out;
-    position: fixed;
+    position: absolute;
 	right: 5em;
     top: 0.85em;
     background-color: #212121;
@@ -47,7 +47,7 @@ input.search:focus {
 }
 
 div.search-button {
-  position: fixed;
+  position: absolute;
   right: 5em;
   top: 0.85em;
   border: none;
