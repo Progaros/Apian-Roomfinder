@@ -22,8 +22,7 @@
     margin-top: -8vw;
     margin-left: -8vw;
     position: relative;
-    top: 18%;
-    left: 83%;
+    display: none;
 }
 
 @media (min-width: 500px) {

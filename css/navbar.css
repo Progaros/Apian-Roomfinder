@@ -64,3 +64,9 @@ div.dropdown-menu {
 div.dropdown-menu > *{
 	color: #aaa !important;
 }
+
+@media (min-width: 992px) {
+  input.search, div.search-button  {
+    right: 1.5em;
+  }
+}

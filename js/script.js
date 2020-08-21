@@ -30,17 +30,19 @@ function loadBetterImage(){
 
 
 //set pointer on load
-if (rooms[getSearchedRoom()] != undefined)
+if (rooms[getSearchedRoom()] != undefined && rooms[getSearchedRoom()].length > 0)
     updateMap(getSearchedRoom());
+else if (getSearchedRoom().length > 0)
+    alert("Zimmer nicht gefunden");
 
 function search(){
     searchInput = document.getElementById("search-input");
-    if (parseInt(window.getComputedStyle(searchInput).width) < 50)
+    if (parseInt(window.getComputedStyle(searchInput).width) < 50 // not open
+     || searchInput.value.length <= 0)                            // no text
         searchInput.focus();
     else if (!isNaN(searchInput.value)          // not text
-             && searchInput.value.length > 0    // not empty
-             && searchInput.value > 0           //between 0
-             && searchInput.value < 501){       //and 500
+             && searchInput.value > 0           // between 0
+             && searchInput.value < 501){       // and 500
         window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
         searchInput.blur();
     }
@@ -50,8 +52,9 @@ function search(){
 
 function updateMap(room){
     var dot = document.getElementById("dot");
-    var square = document.getElementById("square");
     dot.style.display = "none";
+    var square = document.getElementById("square");
+    square.style.display = "none";
     if (rooms[room] != undefined){
         dot.style.top  = rooms[room][0] + "%";
         dot.style.left = rooms[room][1] + "%";
