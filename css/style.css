@@ -19,3 +19,7 @@ body {
 .footer .container {
     width: max-content;
 }
+
+.hidden{
+    display: none !important;
+}

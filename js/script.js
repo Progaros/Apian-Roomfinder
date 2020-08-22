@@ -3,6 +3,14 @@ document.getElementById("search-button").addEventListener("click", search);
 document.getElementById("otherRooms").addEventListener("click", function() {
     $('.navbar-collapse').collapse('hide');
 });
+document.getElementById("elevatorToggle").addEventListener("click", function() {
+    if (document.getElementById("elevatorCheckbox").checked)
+        Array.from(document.getElementsByClassName("elevator")).forEach(x => {
+            x.classList.remove("hidden");});
+    else
+        Array.from(document.getElementsByClassName("elevator")).forEach(x => {
+            x.classList.add("hidden");});
+});
 document.getElementById("search-input").addEventListener('keyup', ({key}) => {
     if (key === "Enter")
         search();
@@ -11,6 +19,7 @@ if ("onhashchange" in window)
 window.onhashchange = function () {
     updateMap(getSearchedRoom());
 }
+
 
 //load better picture
 if (document.getElementById("map").complete) {
@@ -35,6 +44,8 @@ if (rooms[getSearchedRoom()] != undefined && rooms[getSearchedRoom()].length > 0
 else if (getSearchedRoom().length > 0)
     alert("Zimmer nicht gefunden");
 
+
+// search
 function search(){
     searchInput = document.getElementById("search-input");
     if (parseInt(window.getComputedStyle(searchInput).width) < 50 // not open
@@ -50,6 +61,8 @@ function search(){
         alert("Bitte eine valide Zimmernummer angeben");
 }
 
+
+// update map
 function updateMap(room){
     var dot = document.getElementById("dot");
     dot.style.display = "none";
@@ -70,8 +83,10 @@ function updateMap(room){
 }
 
 
-
-
+// get searched room
 function getSearchedRoom(){
     return window.location.hash.substr(1);
 }
+
+
+//toggle elevators
