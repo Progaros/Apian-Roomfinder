@@ -56,15 +56,15 @@ else if (getSearchedRoom().length > 0)
 // search
 function search(){
     searchInput = document.getElementById("search-input");
-    if (parseInt(window.getComputedStyle(searchInput).width) < 50 // not open
-     || searchInput.value.length <= 0)                            // no text
-        searchInput.focus();
-    else if (!isNaN(searchInput.value)          // not text
-             && searchInput.value > 0           // between 0
-             && searchInput.value < 501){       // and 500
+    if (parseInt(window.getComputedStyle(searchInput).width) < 50  // not open
+     || searchInput.value.length <= 0)                             // no text
+        searchInput.focus();                                       // --> do nothing 
+    else if (!isNaN(searchInput.value)                  // is number
+          && rooms[searchInput.value] != undefined      // is defined
+          && rooms[searchInput.value][0] != undefined){
         window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
         searchInput.blur();
-        searchInput.value = "";
+        searchInput.value = "";                         // --> search
     }
     else
         alert("Bitte eine valide Zimmernummer angeben");
@@ -77,7 +77,7 @@ function updateMap(room){
     dot.style.display = "none";
     var square = document.getElementById("square");
     square.style.display = "none";
-    if (rooms[room] != undefined){
+    if (rooms[room] != undefined && rooms[room][0] != undefined){
         dot.style.top  = rooms[room][0] + "%";
         dot.style.left = rooms[room][1] + "%";
         dot.style.display = "inherit";
