@@ -36,6 +36,15 @@ img.elevator {
     left: 36.5%;
 }
 
+#north {
+    height: 4vw;
+    margin-top: -4vw;
+    position: relative;
+    display: inherit;
+    top: 5.5%;
+    left: 53%;
+}
+
 #square {
     width: 8vw;
     height: 8vw;
@@ -60,6 +69,10 @@ img.elevator {
         width: 40px;
         margin-top: -40px;
         margin-left: -40px;
+    }
+    #north {
+        height: 20px;
+        margin-top: -20px;
     }
     #square {
         width: 40px;

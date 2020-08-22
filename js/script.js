@@ -12,6 +12,13 @@ document.getElementById("elevatorToggle").addEventListener("click", function() {
         Array.from(document.getElementsByClassName("elevator")).forEach(x => {
             x.classList.add("hidden");});
 });
+document.getElementById("northToggle").addEventListener("click", function() {
+    $('.navbar-collapse').collapse('hide');
+    if (document.getElementById("northCheckbox").checked)
+        document.getElementById("north").classList.remove("hidden");
+    else
+        document.getElementById("north").classList.add("hidden");
+});
 document.getElementById("search-input").addEventListener('keyup', ({key}) => {
     if (key === "Enter")
         search();
