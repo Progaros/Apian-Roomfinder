@@ -4,6 +4,7 @@ document.getElementById("otherRooms").addEventListener("click", function() {
     $('.navbar-collapse').collapse('hide');
 });
 document.getElementById("elevatorToggle").addEventListener("click", function() {
+    $('.navbar-collapse').collapse('hide');
     if (document.getElementById("elevatorCheckbox").checked)
         Array.from(document.getElementsByClassName("elevator")).forEach(x => {
             x.classList.remove("hidden");});
@@ -56,6 +57,7 @@ function search(){
              && searchInput.value < 501){       // and 500
         window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
         searchInput.blur();
+        searchInput.value = "";
     }
     else
         alert("Bitte eine valide Zimmernummer angeben");

@@ -4,6 +4,7 @@ nav.navbar {
 
 a.navbar-brand {
 	order: -1;
+  transition: color 0.2s ease-out;
 }
 
 button.navbar-toggler {
@@ -13,7 +14,7 @@ button.navbar-toggler {
 input.search {
     width: 3em;
     max-width: 25em;
-    transition: width 0.4s ease-in-out, color 0.1s ease-in-out;
+    transition: width 0.4s ease-out, color 0.1s ease-out;
     position: absolute;
 	right: 5em;
     top: 0.85em;
@@ -42,7 +43,6 @@ input.search:focus {
 @media (max-width: 500px) {
 	input.search:focus ~ a.navbar-brand{
 		color: transparent;
-		transition: color 0.1s ease-in-out;
   }
 }
 
