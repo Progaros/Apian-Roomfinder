@@ -5,12 +5,15 @@ document.getElementById("otherRooms").addEventListener("click", function() {
 });
 document.getElementById("elevatorToggle").addEventListener("click", function() {
     $('.navbar-collapse').collapse('hide');
-    if (document.getElementById("elevatorCheckbox").checked)
-        Array.from(document.getElementsByClassName("elevator")).forEach(x => {
-            x.classList.remove("hidden");});
-    else
-        Array.from(document.getElementsByClassName("elevator")).forEach(x => {
-            x.classList.add("hidden");});
+    if (document.getElementById("elevatorCheckbox").checked) {
+        document.getElementById("elevator1").classList.remove("hidden");
+        document.getElementById("elevator2").classList.remove("hidden");
+        document.getElementById("elevator3").classList.remove("hidden");
+    } else {
+        document.getElementById("elevator1").classList.add("hidden");
+        document.getElementById("elevator2").classList.add("hidden");
+        document.getElementById("elevator3").classList.add("hidden");
+    }
 });
 document.getElementById("northToggle").addEventListener("click", function() {
     $('.navbar-collapse').collapse('hide');
@@ -19,8 +22,8 @@ document.getElementById("northToggle").addEventListener("click", function() {
     else
         document.getElementById("north").classList.add("hidden");
 });
-document.getElementById("search-input").addEventListener('keyup', ({key}) => {
-    if (key === "Enter")
+document.getElementById("search-input").addEventListener('keypress', function (e) {
+    if (e.key === 'Enter')
         search();
 });
 if ("onhashchange" in window)
