@@ -20,6 +20,10 @@ body {
     width: max-content;
 }
 
+footer > div > span > a {
+    text-decoration: underline;
+}
+
 .hidden{
     display: none !important;
 }

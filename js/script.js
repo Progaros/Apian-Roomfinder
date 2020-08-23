@@ -96,6 +96,3 @@ function updateMap(room){
 function getSearchedRoom(){
     return window.location.hash.substr(1);
 }
-
-
-//toggle elevators
