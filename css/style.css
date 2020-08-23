@@ -24,6 +24,16 @@ footer > div > span > a {
     text-decoration: underline;
 }
 
+
+@media (max-width: 330px) {
+    a.navbar-brand{
+        font-size: 19px;
+    }
+    footer > div > span {
+        font-size: 10px;
+    }
+}
+
 .hidden{
     display: none !important;
 }

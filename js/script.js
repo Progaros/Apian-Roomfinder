@@ -67,7 +67,7 @@ function search(){
         searchInput.value = "";                         // --> search
     }
     else
-        alert("Bitte eine valide Zimmernummer angeben");
+        alert("Bitte eine gültige Zimmernummer angeben");
 }
 
 

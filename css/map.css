@@ -13,6 +13,7 @@
     margin-left: -4vw;
     position: relative;
     display: none;
+    transition: top 0.5s, left 0.5s;
 }
 
 img.elevator {
@@ -53,6 +54,7 @@ img.elevator {
     margin-left: -8vw;
     position: relative;
     display: none;
+    transition: top 0.5s, left 0.5s;
 }
 
 @media (min-width: 500px) {
