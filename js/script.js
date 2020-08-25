@@ -15,6 +15,18 @@ document.getElementById("elevatorToggle").addEventListener("click", function() {
         document.getElementById("elevator3").classList.add("hidden");
     }
 });
+document.getElementById("doorToggle").addEventListener("click", function() {
+    $('.navbar-collapse').collapse('hide');
+    if (document.getElementById("doorCheckbox").checked) {
+        document.getElementById("door1").classList.remove("hidden");
+        document.getElementById("door2").classList.remove("hidden");
+        document.getElementById("door3").classList.remove("hidden");
+    } else {
+        document.getElementById("door1").classList.add("hidden");
+        document.getElementById("door2").classList.add("hidden");
+        document.getElementById("door3").classList.add("hidden");
+    }
+});
 document.getElementById("northToggle").addEventListener("click", function() {
     $('.navbar-collapse').collapse('hide');
     if (document.getElementById("northCheckbox").checked)
@@ -26,6 +38,9 @@ document.getElementById("search-input").addEventListener('keypress', function (e
     if (e.key === 'Enter')
         search();
 });
+var i = new Image;
+if (getSearchedRoom().length > 0 && false) 
+    i.src = "searched-"+getSearchedRoom();
 if ("onhashchange" in window)
 window.onhashchange = function () {
     updateMap(getSearchedRoom());
@@ -43,22 +58,23 @@ function loadBetterImage(){
     var newImg = new Image;
     newImg.onload = function() {
         document.getElementById("map").src = this.src;
+
+        //set pointer on load
+        if (rooms[getSearchedRoom()] != undefined && rooms[getSearchedRoom()].length > 0)
+        updateMap(getSearchedRoom());
+        else if (getSearchedRoom().length > 0)
+        alert("Zimmer nicht gefunden");
     }
     newImg.src = 'res/apian.jpg';
     document.getElementById("map").removeEventListener('load', loadBetterImage);
 }
 
 
-//set pointer on load
-if (rooms[getSearchedRoom()] != undefined && rooms[getSearchedRoom()].length > 0)
-    updateMap(getSearchedRoom());
-else if (getSearchedRoom().length > 0)
-    alert("Zimmer nicht gefunden");
-
-
 // search
 function search(){
     searchInput = document.getElementById("search-input");
+    if (getSearchedRoom().length > 0 && false) 
+        i.src = "searched-"+getSearchedRoom();
     if (parseInt(window.getComputedStyle(searchInput).width) < 50  // not open
      || searchInput.value.length <= 0)                             // no text
         searchInput.focus();                                       // --> do nothing 
@@ -90,6 +106,8 @@ function updateMap(room){
             square.style.top  = floors[rooms[room][2]][0] + "%";
             square.style.left = floors[rooms[room][2]][1] + "%";
             square.style.display = "inherit";
+            setTimeout(function(){ square.style.animationName = "blink"; }, 500);
+            setTimeout(function(){ square.style.animationName = "none"; }, 1500);
         }
     }
 }

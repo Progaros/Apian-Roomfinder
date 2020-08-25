@@ -17,24 +17,39 @@
 }
 
 img.elevator {
-    width: 8vw;
+    height: 8vw;
     margin-top: -8vw;
     margin-left: -8vw;
     position: relative;
     display: block;
+    left: 36.5%;
 }
-
 #elevator1 {
     top: 19.4%;
-    left: 36.5%;
 }
 #elevator2 {
     top: 49.2%;
-    left: 36.5%;
 }
 #elevator3 {
     top: 82%;
-    left: 36.5%;
+}
+
+img.door {
+    height: 8vw;
+    margin-top: -8vw;
+    margin-left: -8vw;
+    position: relative;
+    display: block;
+    left: 45%;
+}
+#door1 {
+    top: 19.4%;
+}
+#door2 {
+    top: 49.2%;
+}
+#door3 {
+    top: 82%;
 }
 
 #north {
@@ -55,7 +70,14 @@ img.elevator {
     position: relative;
     display: none;
     transition: top 0.5s, left 0.5s;
+    animation-duration: 1s;
 }
+
+@keyframes blink {
+    0%   {background-color: transparent;}
+    50%  {background-color: #f00;}
+    100% {background-color: transparent;}
+  }
 
 @media (min-width: 500px) {
     #mapContainer {
@@ -68,7 +90,12 @@ img.elevator {
         margin-left: -17.5px;
     }
     img.elevator {
-        width: 40px;
+        height: 40px;
+        margin-top: -40px;
+        margin-left: -40px;
+    }
+    img.door {
+        height: 40px;
         margin-top: -40px;
         margin-left: -40px;
     }
