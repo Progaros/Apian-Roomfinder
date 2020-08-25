@@ -27,6 +27,24 @@ document.getElementById("doorToggle").addEventListener("click", function() {
         document.getElementById("door3").classList.add("hidden");
     }
 });
+document.getElementById("pathToggle").addEventListener("click", function() {
+    $('.navbar-collapse').collapse('hide');
+    if (document.getElementById("pathCheckbox").checked) {
+        document.getElementById("path1").classList.remove("hidden");
+        document.getElementById("path2").classList.remove("hidden");
+        document.getElementById("path3").classList.remove("hidden");
+        document.getElementById("path4").classList.remove("hidden");
+        document.getElementById("path5").classList.remove("hidden");
+        document.getElementById("path6").classList.remove("hidden");
+    } else {
+        document.getElementById("path1").classList.add("hidden");
+        document.getElementById("path2").classList.add("hidden");
+        document.getElementById("path3").classList.add("hidden");
+        document.getElementById("path4").classList.add("hidden");
+        document.getElementById("path5").classList.add("hidden");
+        document.getElementById("path6").classList.add("hidden");
+    }
+});
 document.getElementById("northToggle").addEventListener("click", function() {
     $('.navbar-collapse').collapse('hide');
     if (document.getElementById("northCheckbox").checked)
@@ -104,7 +122,6 @@ function updateMap(room){
         square.style.display = "none";
         if (rooms[room][2] != undefined){
             square.style.top  = floors[rooms[room][2]][0] + "%";
-            square.style.left = floors[rooms[room][2]][1] + "%";
             square.style.display = "inherit";
             setTimeout(function(){ square.style.animationName = "blink"; }, 500);
             setTimeout(function(){ square.style.animationName = "none"; }, 1500);

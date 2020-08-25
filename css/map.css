@@ -19,10 +19,9 @@
 img.elevator {
     height: 8vw;
     margin-top: -8vw;
-    margin-left: -8vw;
     position: relative;
     display: block;
-    left: 36.5%;
+    left: 28.5%;
 }
 #elevator1 {
     top: 19.4%;
@@ -56,7 +55,7 @@ img.door {
     height: 4vw;
     margin-top: -4vw;
     position: relative;
-    display: inherit;
+    display: block;
     top: 5.5%;
     left: 53%;
 }
@@ -64,6 +63,7 @@ img.door {
 #square {
     width: 8vw;
     height: 8vw;
+    left: 7.8%;
     border: 1vw solid red;
     margin-top: -8vw;
     margin-left: -8vw;
@@ -71,6 +71,55 @@ img.door {
     display: none;
     transition: top 0.5s, left 0.5s;
     animation-duration: 1s;
+}
+
+div.path{
+    border: 1vw solid transparent;
+    background-color: #f005;
+    position: relative;
+    display: block;
+}
+
+#path1{
+    left: 19.6%;
+    top: 48.75%;
+    width: 18.1vw;
+    margin-top: -2vw;
+    border-radius: 1vw 0 0 1vw;
+}
+#path2{
+    left: 37.6%;
+    top: 87%;
+    height: 123.3vw;
+    width: 0;
+    margin-top: -123.3vw;
+}
+#path3{
+    left: 39.6%;
+    top: 37.2%;
+    width: 45vw;
+    margin-top: -2vw;
+}
+#path4{
+    left: 39.6%;
+    top: 60.3%;
+    width: 45vw;
+    margin-top: -2vw;
+}
+#path5{
+    left: 19.6%;
+    top: 88.4%;
+    width: 67vw;
+    margin-top: -2vw;
+    border-radius: 1vw 0 1vw 1vw;
+}
+#path6{
+    left: 84.6%;
+    top: 87%;
+    height: 72.6vw;
+    width: 0;
+    margin-top: -72.6vw;
+    border-radius: 0 1vw 0 0;
 }
 
 @keyframes blink {
