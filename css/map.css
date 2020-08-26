@@ -70,7 +70,15 @@ img.door {
     position: relative;
     display: none;
     transition: top 0.5s, left 0.5s;
-    animation-duration: 1s;
+    animation-duration: 2s;
+}
+
+@keyframes blink {
+    0%   {background-color: transparent;}
+    25%  {background-color: #f00;}
+    50% {background-color: transparent;}
+    75%  {background-color: #f00;}
+    100% {background-color: transparent;}
 }
 
 div.path{
@@ -83,7 +91,7 @@ div.path{
 #path1{
     left: 19.6%;
     top: 48.75%;
-    width: 18.1vw;
+    width: 18vw;
     margin-top: -2vw;
     border-radius: 1vw 0 0 1vw;
 }
@@ -122,12 +130,6 @@ div.path{
     border-radius: 0 1vw 0 0;
 }
 
-@keyframes blink {
-    0%   {background-color: transparent;}
-    50%  {background-color: #f00;}
-    100% {background-color: transparent;}
-  }
-
 @media (min-width: 500px) {
     #mapContainer {
         margin: 0 calc((100% - 500px) / 2);
@@ -141,7 +143,6 @@ div.path{
     img.elevator {
         height: 40px;
         margin-top: -40px;
-        margin-left: -40px;
     }
     img.door {
         height: 40px;
@@ -153,10 +154,37 @@ div.path{
         margin-top: -20px;
     }
     #square {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         border-width: 5px;
-        margin-top: -40px;
-        margin-left: -40px;
+        margin-top: -38px;
+        margin-left: -39px;
+    }
+    div.path{
+        border-width: 5px;
+    }
+    #path1{
+        width: 90px;
+        margin-top: -10px;
+    }
+    #path2{
+        height: 616.1px;
+        margin-top: -616.1px;
+    }
+    #path3{
+        width: 225px;
+        margin-top: -10px;
+    }
+    #path4{
+        width: 225px;
+        margin-top: -10px;
+    }
+    #path5{
+        width: 334.634px;
+        margin-top: -10px;
+    }
+    #path6{
+        height: 362.6px;
+        margin-top: -362.6px;
     }
 }

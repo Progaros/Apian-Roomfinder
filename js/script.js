@@ -64,6 +64,18 @@ window.onhashchange = function () {
     updateMap(getSearchedRoom());
 }
 
+//first visit cookie
+if (document.cookie.split('; ').find(row => row.startsWith('visits')) == undefined)
+    document.cookie = "visits=1; max-age=315360000";
+else
+    document.cookie = "visits=" 
+    + (parseInt(document.cookie.split('; ').find(row => row.startsWith('visits')).split('=')[1])+1) //visits ++
+    + "; max-age=315360000";
+
+if (document.cookie != "") //prevent errors with local testing
+    var visits = parseInt(document.cookie.split('; ').find(row => row.startsWith('visits')).split('=')[1]);
+else
+    var visits = 1;
 
 //load better picture
 if (document.getElementById("map").complete) {
@@ -123,8 +135,9 @@ function updateMap(room){
         if (rooms[room][2] != undefined){
             square.style.top  = floors[rooms[room][2]][0] + "%";
             square.style.display = "inherit";
-            setTimeout(function(){ square.style.animationName = "blink"; }, 500);
-            setTimeout(function(){ square.style.animationName = "none"; }, 1500);
+            if (visits <= 5)
+                setTimeout(function(){ square.style.animationName = "blink"; }, 500);
+            setTimeout(function(){ square.style.animationName = "none"; }, 2500);
         }
     }
 }
