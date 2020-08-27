@@ -57,7 +57,7 @@ document.getElementById("search-input").addEventListener('keypress', function (e
         search();
 });
 var i = new Image;
-if (getSearchedRoom().length > 0 && false) 
+if (getSearchedRoom().length > 0)
     i.src = "searched-"+getSearchedRoom();
 if ("onhashchange" in window)
 window.onhashchange = function () {
@@ -103,7 +103,7 @@ function loadBetterImage(){
 // search
 function search(){
     searchInput = document.getElementById("search-input");
-    if (getSearchedRoom().length > 0 && false) 
+    if (getSearchedRoom().length > 0) 
         i.src = "searched-"+getSearchedRoom();
     if (parseInt(window.getComputedStyle(searchInput).width) < 50  // not open
      || searchInput.value.length <= 0)                             // no text
@@ -116,7 +116,7 @@ function search(){
         searchInput.value = "";                         // --> search
     }
     else
-        alert("Bitte eine gültige Zimmernummer angeben");
+        alert("Zimmer nicht gefunden");
 }
 
 
