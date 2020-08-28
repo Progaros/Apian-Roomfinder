@@ -497,6 +497,8 @@ var rooms = [[], [84,42,0], //one room per line     // --> Parkplatzflügel
 [21,76,4],
 [13,80,4],
 [21,80,4], // Fahrradflügel <--
+[21,28,3],
+[21,28,4],
 ];
 
 // special rooms

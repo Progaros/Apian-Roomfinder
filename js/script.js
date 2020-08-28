@@ -98,7 +98,7 @@ function loadBetterImage(){
     newImg.src = 'res/apian.jpg';
     document.getElementById("map").removeEventListener('load', loadBetterImage);
 }
-
+ 
 
 // search
 function search(){
