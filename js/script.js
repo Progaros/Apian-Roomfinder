@@ -103,19 +103,20 @@ function loadBetterImage(){
 // search
 function search(){
     searchInput = document.getElementById("search-input");
-    while (searchInput[0] == "0")
-        searchInput = searchInput.substring(1) //remove leading zeros
-    if (getSearchedRoom().length > 0) 
-        i.src = "searched-"+getSearchedRoom();
+    room = searchInput.value;
+    while (room[0] == "0")
+        room = room.substring(1); //remove leading zeros
+    if (room.length > 0) 
+        i.src = "searched-"+room;
     if (parseInt(window.getComputedStyle(searchInput).width) < 50  // not open
-     || searchInput.value.length <= 0)                             // no text
+     || room.length <= 0)                             // no text
         searchInput.focus();                                       // --> do nothing 
-    else if (!isNaN(searchInput.value)                  // is number
-          && rooms[searchInput.value] != undefined      // is defined
-          && rooms[searchInput.value][0] != undefined){
+    else if (!isNaN(room)                  // is number
+          && rooms[room] != undefined      // is defined
+          && rooms[room][0] != undefined){
         window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
         searchInput.blur();
-        searchInput.value = "";                         // --> search
+        room = "";                         // --> search
     }
     else
         alert("Zimmer nicht gefunden");
@@ -147,8 +148,8 @@ function updateMap(room){
 
 // get searched room
 function getSearchedRoom(){
-    searchInput = window.location.hash.substr(1);
-    while (searchInput[0] == "0")
-        searchInput = searchInput.substring(1) //remove leading zeros
-    return searchInput;
+    room = window.location.hash.substr(1);
+    while (room[0] == "0")
+        room = room.substring(1); //remove leading zeros
+    return room;
 }
