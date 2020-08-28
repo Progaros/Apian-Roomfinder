@@ -160,14 +160,14 @@ var rooms = [[], [84,42,0], //one room per line     // --> Parkplatzflügel
 [44,76,1],
 [52,80,1],
 [44,80,1], // Mittelflügel <--
-[72,34,1], // --> Zwischen Mittleflügel und Fahrradflügel
-[70,34,1],
-[68,34,1],
-[65,34,1],
-[63,34,1],
-[60,34,1],
-[58,34,1],
-[55,34,1], // Zwischen Mittleflügel und Fahrradflügel <--
+[41,34,1], // --> Zwischen Mittleflügel und Fahrradflügel
+[39,34,1],
+[37,34,1],
+[34,34,1],
+[32,34,1],
+[30,34,1],
+[27,34,1],
+[24,34,1], // Zwischen Mittleflügel und Fahrradflügel <--
 [11,26,1], // --> Fahrradflügel
 [11,30,1],
 [11,34,1],
@@ -260,14 +260,14 @@ var rooms = [[], [84,42,0], //one room per line     // --> Parkplatzflügel
 [44,76,2],
 [52,80,2],
 [44,80,2], // Mittelflügel <--
-[72,34,2], // --> Zwischen Mittleflügel und Fahrradflügel
-[70,34,2],
-[68,34,2],
-[65,34,2],
-[63,34,2],
-[60,34,2],
-[58,34,2],
-[55,34,2], // Zwischen Mittleflügel und Fahrradflügel <--
+[41,34,2], // --> Zwischen Mittleflügel und Fahrradflügel
+[39,34,2],
+[37,34,2],
+[34,34,2],
+[32,34,2],
+[30,34,2],
+[27,34,2],
+[24,34,2], // Zwischen Mittleflügel und Fahrradflügel <--
 [11,26,2], // --> Fahrradflügel
 [11,30,2],
 [11,34,2],
@@ -360,14 +360,14 @@ var rooms = [[], [84,42,0], //one room per line     // --> Parkplatzflügel
 [44,76,3],
 [52,80,3],
 [44,80,3], // Mittelflügel <--
-[72,34,3], // --> Zwischen Mittleflügel und Fahrradflügel
-[70,34,3],
-[68,34,3],
-[65,34,3],
-[63,34,3],
-[60,34,3],
-[58,34,3],
-[55,34,3], // Zwischen Mittleflügel und Fahrradflügel <--
+[41,34,3], // --> Zwischen Mittleflügel und Fahrradflügel
+[39,34,3],
+[37,34,3],
+[34,34,3],
+[32,34,3],
+[30,34,3],
+[27,34,3],
+[24,34,3], // Zwischen Mittleflügel und Fahrradflügel <--
 [11,26,3], // --> Fahrradflügel
 [11,30,3],
 [11,34,3],
@@ -460,14 +460,14 @@ var rooms = [[], [84,42,0], //one room per line     // --> Parkplatzflügel
 [44,76,4],
 [52,80,4],
 [44,80,4], // Mittelflügel <--
-[72,34,4], // --> Zwischen Mittleflügel und Fahrradflügel
-[70,34,4],
-[68,34,4],
-[65,34,4],
-[63,34,4],
-[60,34,4],
-[58,34,4],
-[55,34,4], // Zwischen Mittleflügel und Fahrradflügel <--
+[41,34,4], // --> Zwischen Mittleflügel und Fahrradflügel
+[39,34,4],
+[37,34,4],
+[34,34,4],
+[32,34,4],
+[30,34,4],
+[27,34,4],
+[24,34,4], // Zwischen Mittleflügel und Fahrradflügel <--
 [11,26,4], // --> Fahrradflügel
 [11,30,4],
 [11,34,4],
