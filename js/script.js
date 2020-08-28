@@ -103,6 +103,8 @@ function loadBetterImage(){
 // search
 function search(){
     searchInput = document.getElementById("search-input");
+    while (searchInput[0] == "0")
+        searchInput = searchInput.substring(1) //remove leading zeros
     if (getSearchedRoom().length > 0) 
         i.src = "searched-"+getSearchedRoom();
     if (parseInt(window.getComputedStyle(searchInput).width) < 50  // not open
@@ -145,5 +147,8 @@ function updateMap(room){
 
 // get searched room
 function getSearchedRoom(){
-    return window.location.hash.substr(1);
+    searchInput = window.location.hash.substr(1);
+    while (searchInput[0] == "0")
+        searchInput = searchInput.substring(1) //remove leading zeros
+    return searchInput;
 }
