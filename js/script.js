@@ -61,6 +61,8 @@ if (getSearchedRoom().length > 0)
     i.src = "searched-"+getSearchedRoom();
 if ("onhashchange" in window)
 window.onhashchange = function () {
+    if (getSearchedRoom().length > 0)
+        i.src = "searched-"+getSearchedRoom();
     updateMap(getSearchedRoom());
 }
 
@@ -106,15 +108,13 @@ function search(){
     room = searchInput.value;
     while (room[0] == "0")
         room = room.substring(1); //remove leading zeros
-    if (room.length > 0) 
-        i.src = "searched-"+room;
+    window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
     if (parseInt(window.getComputedStyle(searchInput).width) < 50  // not open
      || room.length <= 0)                             // no text
         searchInput.focus();                                       // --> do nothing 
     else if (!isNaN(room)                  // is number
           && rooms[room] != undefined      // is defined
           && rooms[room][0] != undefined){
-        window.history.pushState("", "", location.href = location.origin + location.pathname + "#" + searchInput.value);
         searchInput.blur();
         room = "";                         // --> search
     }

@@ -18,9 +18,9 @@
 
     <link rel="icon" type="image/png" href="res/icon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/navbar.css" rel="stylesheet">
-    <link href="css/map.css" rel="stylesheet">
+    <link href="css/style.css?<?php echo filemtime("css/style.css") ?>" rel="stylesheet">
+    <link href="css/navbar.css?<?php echo filemtime("css/navbar.css") ?>" rel="stylesheet">
+    <link href="css/map.css?<?php echo filemtime("css/map.css") ?>" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -104,10 +104,11 @@
       <div class="container">
         <span class="text-muted">
             Erstellt von <a class="text-muted" href="/">Oliver Großkloß</a> | 
-            <a class="text-muted" href="imprint.html">Impressum</a> | 
-            <a class="text-muted" href="privacyPolicy.html">Datenschutzerklärung</a> | 
             <a class="text-muted" href="https://github.com/Progaros/roomfinder/">GitHub</a> | 
-            <a class="text-muted" href="mailto:oliver.grosskloss+roomfinder@gmail.com">Kontakt</a>
+            <a class="text-muted" href="mailto:oliver.grosskloss+roomfinder@gmail.com">Kontakt</a> <br>
+            <a class="text-muted" href="privacyPolicy.html">Datenschutzerklärung</a> |
+            <a class="text-muted" href="imprint.html">Impressum</a> | 
+            <a class="text-muted" href="license.html">License</a> 
         </span>
       </div>
     </footer>
