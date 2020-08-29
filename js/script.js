@@ -66,6 +66,10 @@ window.onhashchange = function () {
     updateMap(getSearchedRoom());
 }
 
+//english Language for license
+if (navigator.language.split("-")[0] == "en")
+    document.getElementById("license").innerText = "License";
+
 //first visit cookie
 if (document.cookie.split('; ').find(row => row.startsWith('visits')) == undefined)
     document.cookie = "visits=1; max-age=315360000";
