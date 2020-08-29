@@ -67,8 +67,11 @@ window.onhashchange = function () {
 }
 
 //english Language for license
-if (navigator.language.split("-")[0] == "en")
-    document.getElementById("license").innerText = "License";
+if (navigator.language.split("-")[0] == "en"){
+    var license = document.getElementById("license");
+    license.innerText = "License";
+    license.setAttribute('href', 'license.html');
+}
 
 //first visit cookie
 if (document.cookie.split('; ').find(row => row.startsWith('visits')) == undefined)

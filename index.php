@@ -108,7 +108,7 @@
             <a class="text-muted" href="mailto:oliver.grosskloss+roomfinder@gmail.com">Kontakt</a> <br>
             <a class="text-muted" href="privacyPolicy.html">Datenschutzerklärung</a> |
             <a class="text-muted" href="imprint.html">Impressum</a> | 
-            <a class="text-muted" href="license.html" id="license">Lizenz</a> 
+            <a class="text-muted" href="lizenz.html" id="license">Lizenz</a> 
         </span>
       </div>
     </footer>
