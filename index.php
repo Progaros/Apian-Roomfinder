@@ -106,8 +106,8 @@
             Erstellt von <a class="text-muted" href="/">Oliver Großkloß</a> | 
             <a class="text-muted" href="https://github.com/Progaros/roomfinder/">GitHub</a> | 
             <a class="text-muted" href="mailto:oliver.grosskloss+roomfinder@gmail.com">Kontakt</a> <br>
-            <a class="text-muted" href="privacyPolicy.html">Datenschutzerklärung</a> |
-            <a class="text-muted" href="imprint.html">Impressum</a> | 
+            <a class="text-muted" href="/privacyPolicy.html">Datenschutzerklärung</a> |
+            <a class="text-muted" href="/imprint.html">Impressum</a> | 
             <a class="text-muted" href="lizenz.html" id="license">Lizenz</a> 
         </span>
       </div>

@@ -66,7 +66,7 @@ window.onhashchange = function () {
     updateMap(getSearchedRoom());
 }
 
-//english Language for license
+//English Language for license
 if (navigator.language.split("-")[0] == "en"){
     var license = document.getElementById("license");
     license.innerText = "License";
@@ -88,7 +88,7 @@ else
 
 //load better picture
 if (document.getElementById("map").complete) {
-  loadBetterImage()
+  loadBetterImage();
 } else {
     document.getElementById("map").addEventListener('load', loadBetterImage);
 }
